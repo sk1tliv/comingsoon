@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Hi !</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+    :root {
+      --main-color: #000000;
+      --black-color: #121212;
+      --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+    }
+
+    * {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-decoration: none;
+      text-transform: capitalize;
+      transition: 0.2s ease;
+    }
+
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+      scroll-padding-top: 9rem;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--main-color);
+    }
+
+    section {
+      padding: 3.5rem 7%;
+    }
+
+    .btn {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 2rem 3.75rem;
+      border-radius: 30px; /* Daha yuvarlak köşeler */
+      font-size: 2rem;
+      color: #fff;
+      background-color: var(--black-color);
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease; /* Animasyon ekledik */
+    }
+
+    .btn:hover {
+      background-color: #333333; /* Buton rengi hover'da değişir */
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4); /* Hover'da gölge büyür */
+      transform: translateY(-5px); /* Hover'da yukarıya doğru hafif kayar */
+    }
+
+    .title {
+      font-size: 2rem;
+    }
+
+    /* Header */
+    .header .logo img {
+      height: 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header {
+      background-color: rgba(255, 255, 255, 0.615);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      margin: 2rem 7%;
+      border-radius: 30rem;
+      box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    /* Home Section (Navbar altına yerleştirilen içerik) */
+    .home {
+      margin-top: 3.5rem;
+      padding: 2rem 7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .home h3 {
+      font-size: 10rem;
+      color: white;
+    }
+
+    .home p {
+      font-size: 2.5rem;
+      font-weight: 500;
+      line-height: 2rem;
+      color: #ccc;
+    }
+
+    /* Video Background */
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      background-attachment: fixed;
+    }
+
+    /* Takvim Yaprağı Sayaç Stili */
+    .counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: white;
+      font-weight: 500;
+      margin-top: 2rem; /* Bu satır ile sayaç kısmını biraz aşağı alıyoruz */
+    }
+
+    .counter div {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 2rem;
+      margin: 0 1rem;
+      border-radius: 1rem;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .counter div::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 15px;
+      background-color: #ffffff00;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .counter div span {
+      font-size: 3.5rem;
+      font-weight: bold;
+      color: #ffffffaa;
+    }
+
+    /* Sayaç Altındaki Etiket */
+    .counter div p {
+      font-size: 1.2rem;
+      color: #cccccc9d;
+      margin-top: 1rem;
+    }
+  </style>
+
+  <body>
+    <!-- Arka planda video -->
+    <div class="video-background">
+      <video autoplay loop muted>
+        <source src="sahil-dalgasi.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Navbar altına yerleştirilen içerik -->
+    <section class="home">
+      <h3>COMING SOON !</h3>
+      <p>Something great is on the way</p>
+      <div class="counter">
+        <div>
+          <span id="days">00</span>
+          <p>Days</p>
+        </div>
+        <div>
+          <span id="hours">00</span>
+          <p>Hours</p>
+        </div>
+        <div>
+          <span id="minutes">00</span>
+          <p>Minutes</p>
+        </div>
+        <div>
+          <span id="seconds">00</span>
+          <p>Seconds</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Hedef tarihi (şu anki tarihten 3 ay sonrası)
+      const targetDate = new Date();
+      targetDate.setMonth(targetDate.getMonth() + 3);
+
+      // Geri sayım fonksiyonu
+      function updateCounter() {
+        const now = new Date();
+        const remainingTime = targetDate - now;
+
+        // Eğer geri sayım bitmediyse
+        if (remainingTime >= 0) {
+          // Gün, saat, dakika ve saniye hesaplama
+          const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+          const hours = Math.floor(
+            (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          );
+          const minutes = Math.floor(
+            (remainingTime % (1000 * 60 * 60)) / (1000 * 60)
+          );
+          const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+          // Sayaçtaki her birime güncellenmiş zaman ekleme
+          document.getElementById("days").textContent = formatTime(days);
+          document.getElementById("hours").textContent = formatTime(hours);
+          document.getElementById("minutes").textContent = formatTime(minutes);
+          document.getElementById("seconds").textContent = formatTime(seconds);
+        } else {
+          // Eğer geri sayım bitmişse
+          document.getElementById("days").textContent = "00";
+          document.getElementById("hours").textContent = "00";
+          document.getElementById("minutes").textContent = "00";
+          document.getElementById("seconds").textContent = "00";
+        }
+      }
+
+      // Zamanı 2 haneli yapmak için yardımcı fonksiyon
+      function formatTime(time) {
+        if (time < 10) {
+          return "0" + time;
+        }
+        return time;
+      }
+
+      // Sayaç her saniye güncelleniyor
+      setInterval(updateCounter, 1000);
+    </script>
+  </body>
+</html>
